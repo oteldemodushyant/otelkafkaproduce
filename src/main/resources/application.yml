@@ -1,0 +1,23 @@
+app:
+  topics:
+    - name: topic1
+      partitions: 4
+      retentionTime: 1
+      replicationFactor: 2
+    - name: topic2
+      partitions: 4
+      retentionTime: 1
+      replicationFactor: 2
+spring:
+  kafka:
+    bootstrap-servers: pkc-6ojv2.us-west4.gcp.confluent.cloud:9092
+    admin:
+      security:
+        protocol: SASL_SSL
+      client-id: confluent
+      fail-fast: true
+      properties:
+        sasl:
+          mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='{{ MX2DYMYFERMNEJFM:/4VRczkCUg+mMJv48n8OE5csI8OtaK1gm4poFT1oBUK5o8GE8YpIaHAeeF/mJ8hj }}'
